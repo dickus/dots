@@ -1,0 +1,10 @@
+[Unit]
+Description=Change wallpaper
+Wants=wallpaper-changer.timer
+
+[Service]
+Type=oneshot
+ExecStart=/bin/zsh /home/dickus/.config/scripts/wallpaper-changer.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Change the wallpaper every few minutes
+Requires=wallpaper-changer.service
+
+[Timer]
+OnActiveSec=10 minutes
+OnUnitActiveSec=10 minutes
+
+[Install]
+WantedBy=timers.target

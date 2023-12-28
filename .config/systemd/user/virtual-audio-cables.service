@@ -1,0 +1,12 @@
+[Unit]
+Description=Load PulseAudio null sink for Discord and Games
+After=pulseaudio.service
+
+[Service]
+ExecStart=/usr/bin/pactl load-module module-null-sink sink_name=Discord
+ExecStart=/usr/bin/pactl load-module module-null-sink sink_name=Games
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,108 @@
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+set ignorecase true
+
+cmd unarchive ${{
+   case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *.7z) 7z x "$f" ;;
+      *) echo "Unsupported format" ;;
+   esac
+}}
+
+
+cmd open ${{
+   case "$f" in
+      *.png|*.jpg|*.jpeg) feh "$f" ;;
+      *.mkv|*.mp4|*.mov) mpv "$f" ;;
+      *.sh) alacritty -e "./$f" ;;
+      *) alacritty -e nvim "$f" ;;
+   esac
+}}
+
+
+cmd setbg ${{
+   feh --no-fehbg --bg-fill "$f"
+}}
+
+
+cmd mkfile ${{
+   printf "File name: "
+   read -r ans
+   touch "$ans"
+}}
+
+
+cmd mkdir ${{
+   printf "Directory name: "
+   read -r ans
+   mkdir "$ans"
+}}
+
+
+cmd paste ${{
+   load=$(cat ~/.local/share/lf/files)
+   mode=$(echo "$load" | sed -n '1p')
+   list=$(echo "$load" | sed '1d')
+   if [ $mode = 'copy' ]; then
+      cp -Ruv $list .
+      lf -remote 'send clear'
+   elif [ $mode = 'move' ]; then
+      mv -uv $list .
+      rm ~/.local/share/lf/files
+      lf -remote 'send clear'
+   fi
+}}
+
+
+cmd no_spaces ${{
+   mv "$f" "$(echo $f | sed 's/ /_/g')"
+}}
+
+
+# unmapping
+map m
+map M
+map d
+map y
+map o
+map "'"
+map '"'
+map F
+map u
+
+
+# commands
+map au unarchive
+map b setbg
+map F no_spaces
+
+
+# mapping
+map . set hidden
+map . set hidden!
+map DD delete
+map dd cut
+map yy copy
+map R reload
+map mf mkfile
+map md mkdir
+map m :unselect; invert
+map M :unselect
+map <f-2> rename
+
+
+# navigation
+map gs cd ~/.steam/steam/steamapps/common
+map gc cd ~/.config
+map gp cd ~/Pictures
+map gh cd
+map gd cd ~/Downloads
+map gv cd ~/Videos
+map gm cd ~/Videos/Media

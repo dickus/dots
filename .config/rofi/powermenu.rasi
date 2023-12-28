@@ -1,0 +1,86 @@
+/************************************************
+ ***********************************************/
+
+@import "~/.config/rofi/themes/nord.rasi"
+
+listview {
+    lines: 4;
+}
+
+window {
+    background-color: @black0;
+    border: 0px;
+    padding: 0;
+    width: 160px;
+    height: 136px;
+    location: center;
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+}
+
+listview {
+    padding: 8px;
+    border-color: @blue;
+    border: 0px 2px 2px 2px;
+    background-color: @black0;
+    dynamic: false;
+    scrollbar: false;
+}
+
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+    background-color: @black0;
+    text-color: @white2;
+}
+
+element.normal.normal {
+    background-color: @black0;
+    text-color: @white2;
+}
+
+element.selected.normal {
+    background-color: @blue;
+    text-color: @black2;
+}
+
+element.alternate.normal {
+    background-color: @black0;
+    text-color: @white2;
+}
+
+inputbar {
+    spacing: 0px;
+    text-color: @blue;
+    padding: 8px;
+}
+
+case-indicator {
+    spacing: 0;
+    text-color: @blue;
+}
+
+entry {
+    spacing: 0;
+    text-color: @white0;
+}
+
+prompt {
+    spacing: 0;
+    text-color: @white0;
+}
+
+inputbar {
+    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    margin: 0px 0.3em 0em 0em ;
+    text-color: @white0;
+}
+

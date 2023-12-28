@@ -1,0 +1,121 @@
+/**
+ * Nordic rofi theme
+ * Adapted by undiabler <undiabler@gmail.com>
+ *
+ * Nord Color palette imported from https://www.nordtheme.com/
+ *
+ */
+
+configuration {
+
+	font: "Envy Code R 10";
+	line-margin: 10;
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   ">";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     false;
+}
+
+* {
+	black0: #2e3440;
+	black1: #3b4252;
+	black2: #434c5e;
+	black3: #4c566a;
+
+	white0: #d8dee9;
+	white1: #e5e9f0;
+	white2: #eceff4;
+
+	aqua: #8fbcbb;
+	lightblue: #88c0d0;
+	blue: #81a1c1;
+	lightaqua: #5e81ac;
+	lightred: #bf616a;
+
+	lightorange: #d08770;
+	lightyellow: #ebcb8b;
+	lightgreen: #a3be8c;
+	lightpurple: #b48ead;
+
+    foreground:  @blue;
+    background-color:  @black0;
+}
+
+window {
+    location: center;
+    anchor:   center;
+    border:  0px;
+
+    background-color: @black0;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+    width: 30%;
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    color: @blue;
+    padding: 8px;
+    background-color: @black0;
+
+    border: 2px;
+    border-color: @blue;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color:inherit;
+}
+
+prompt {
+    margin: 0px 0.3em 0em 0em ;
+}
+
+listview {
+    padding: 8px;
+    border-color: @blue;
+    border: 0px 2px 2px 2px;
+    background-color: @black0;
+    dynamic: false;
+    lines: 6;
+    columns: 3;
+}
+
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+    background-color: @black0;
+    text-color: @white2;
+}
+
+element selected.normal {
+	background-color: @blue;
+	text-color: @white2;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+button {
+    padding: 6px;
+    color: @foreground;
+    horizontal-align: 0.5;
+
+    border: 2px 0px 2px 2px;
+    border-color: @foreground;
+}
+
+button selected normal {
+    border: 2px 0px 2px 2px;
+    border-color: @foreground;
+}
