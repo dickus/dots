@@ -117,3 +117,6 @@ super + v
 
 super + shift + v
   alacritty --class 'nvim' --title 'nvim' -e nvim
+
+super + n
+  rofi -show calc -no-show-match -no-sort

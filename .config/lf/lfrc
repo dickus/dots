@@ -21,7 +21,9 @@ cmd open ${{
    case "$f" in
       *.png|*.jpg|*.jpeg) feh "$f" ;;
       *.mkv|*.mp4|*.mov) mpv "$f" ;;
+      *.mp3|*.flac) mpv --audio-display=no "$f" ;;
       *.sh) alacritty -e "./$f" ;;
+      *.doc|*.docx) libreoffice "$f" ;;
       *) alacritty -e nvim "$f" ;;
    esac
 }}
@@ -79,7 +81,7 @@ map u
 
 
 # commands
-map au unarchive
+map ua unarchive
 map b setbg
 map F no_spaces
 
