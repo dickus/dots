@@ -24,6 +24,7 @@ cmd open ${{
       *.mp3|*.flac) mpv --audio-display=no "$f" ;;
       *.sh) alacritty -e "./$f" ;;
       *.doc|*.docx) libreoffice "$f" ;;
+      *.pdf) zathura "$f" ;;
       *) alacritty -e nvim "$f" ;;
    esac
 }}
