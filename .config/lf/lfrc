@@ -95,8 +95,8 @@ map yy copy
 map R reload
 map mf mkfile
 map md mkdir
-map m :unselect; invert
-map M :unselect
+map mk :unselect; invert
+map ma :unselect
 map <f-2> rename
 
 
