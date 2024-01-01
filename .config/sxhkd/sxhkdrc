@@ -97,13 +97,13 @@ XF86AudioMute
 
 # Screenshot
 Print
-  sh -c 'import -window root ~/Pictures/"screen_$(date +%F_%H%M%S)".png && xclip -sel clip -t image/png -i ~/Pictures/"screen_$(date +%F_%H%M%S)".png'
+  $HOME/.config/scripts/screenshoter.sh screen
 
 super + Print
-  sh -c 'import -window "$(xdotool getwindowfocus)" ~/Pictures/"screen_$(date +%F_%H%M%S)".png && xclip -sel clip -t image/png -i ~/Pictures/"screen_$(date +%F_%H%M%S)".png'
+  $HOME/.config/scripts/screenshoter.sh window
 
 super + shift + s
-  sh -c 'import ~/Pictures/"screen_$(date +%F_%H%M%S)".png && xclip -sel clip -t image/png -i ~/Pictures/"screen_$(date +%F_%H%M%S)".png'
+  $HOME/.config/scripts/screenshoter.sh region
 
 # Shortcuts
 super + w 
