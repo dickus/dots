@@ -69,6 +69,8 @@ vim.o.formatoptions = 'tcqrn1'
 vim.o.lbr = true --softwrap
 vim.o.clipboard = vim.o.clipboard .. 'unnamedplus' --enable copying from nvim to system buffer
 vim.o.mouse = '' --disable mouse
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 
 
 --colorscheme +airline colorscheme
