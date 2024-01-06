@@ -12,7 +12,7 @@ cmd unarchive ${{
         *.tar.gz) tar -xzvf "$f" ;;
         *.tar.bz2) tar -xjvf "$f" ;;
         *.tar) tar -xvf "$f" ;;
-        *.7z) 7z x "$f" ;;
+        *.7z|*.rar) 7z x "$f" ;;
         *) echo "Unsupported format" ;;
     esac
 }}
@@ -23,7 +23,6 @@ cmd open ${{
         *.png|*.jpg|*.jpeg) feh "$f" ;;
         *.mkv|*.mp4|*.mov) mpv "$f" ;;
         *.mp3|*.flac) mpv --audio-display=no "$f" ;;
-        *.sh) alacritty -e "./$f" ;;
         *.doc|*.docx) libreoffice "$f" ;;
         *.pdf) zathura "$f" ;;
         *.html) firefox "$f" ;;
@@ -57,6 +56,7 @@ cmd paste ${{
     list=$(echo "$load" | sed '1d')
     if [ $mode = 'copy' ]; then
         cp -Ruv $list .
+        rm ~/.local/share/lf/files
         lf -remote 'send clear'
     elif [ $mode = 'move' ]; then
         mv -uv $list .
@@ -72,7 +72,7 @@ cmd no_spaces ${{
 
 
 cmd on-quit ${{
-    if [ -d "~/.local/share/lf/files" ]; then
+    if [ -f ~/.local/share/lf/files ]; then
         rm ~/.local/share/lf/files
         lf -remote 'send clear'
     fi
