@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 arg=$1
 f="screen_$(date +%F_%H%M%S)".png
