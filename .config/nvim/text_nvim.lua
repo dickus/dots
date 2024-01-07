@@ -1,5 +1,6 @@
-vim.cmd [[
-call plug#begin('~/.config/nvim/plugged')
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,10 +20,7 @@ Plug 'https://github.com/junegunn/goyo.vim'
 
 Plug 'vimwiki/vimwiki'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
-
-call plug#end()
-]]
+vim.call ('plug#end')
 
 
 if vim.env.TMUX == nil then
@@ -71,6 +69,7 @@ vim.o.clipboard = vim.o.clipboard .. 'unnamedplus' --enable copying from nvim to
 vim.o.mouse = '' --disable mouse
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+vim.o.sol = true
 
 
 --colorscheme +airline colorscheme
@@ -90,9 +89,3 @@ vim.api.nvim_set_keymap('n', '<M-w>', ':w<CR>', {noremap = true})
 --limelight keybindings
 vim.api.nvim_set_keymap('n', '<C-g>', ':Limelight <bar> :Goyo 120<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<C-h>', ':Limelight! <bar> :Goyo!<CR>', {noremap = true})
-
-
---MarkdownPreview keybindings
-vim.api.nvim_set_keymap('n', '<C-s>', '<Plug>MarkdownPreview', {})
-vim.api.nvim_set_keymap('n', '<M-s>', '<Plug>MarkdownPreviewStop', {})
-vim.api.nvim_set_keymap('n', '<C-p>', '<Plug>MarkdownPreviewToggle', {})

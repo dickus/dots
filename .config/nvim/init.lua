@@ -52,10 +52,11 @@ vim.o.lbr = true --softwrap
 vim.wo.number = true --number of line
 vim.o.clipboard = vim.o.clipboard .. 'unnamedplus' --enable copying from nvim to system buffer
 vim.o.mouse = '' --disable mouse
+vim.o.sol = true
 
 
 --basic keybindings
-vim.api.nvim_set_keymap('n', '<M-q>', ':q<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<M-q>', ':q!<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-w>', ':w<CR>', {noremap = true})
 
 
