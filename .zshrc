@@ -5,7 +5,7 @@ ZSH_THEME="dickus"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 function preexec() {
