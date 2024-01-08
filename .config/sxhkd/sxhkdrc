@@ -1,4 +1,4 @@
--r ~/Documents
+-r $HOME/Documents
 #
 # wm independent hotkeys
 #
@@ -15,7 +15,7 @@ super + d
 
 # power-menu 
 super + shift + e
-     ~/.config/rofi/powermenu.sh
+     $HOME/.config/rofi/powermenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -113,7 +113,7 @@ super + e
   alacritty -e lf
 
 super + v
-  alacritty --class 'vimwiki' --title 'vimwiki' -e nvim -u ~/.config/nvim/text_nvim.lua
+  alacritty --class 'vimwiki' --title 'vimwiki' -e nvim -u $HOME/.config/nvim/text_nvim.lua
 
 super + shift + v
   alacritty --class 'nvim' --title 'nvim' -e nvim

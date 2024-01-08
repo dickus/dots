@@ -1,22 +1,22 @@
 [colors.bright]
-black = "#4C566A"
-blue = "#81A1C1"
-cyan = "#8FBCBB"
-green = "#A3BE8C"
+black   = "#4C566A"
+blue    = "#81A1C1"
+cyan    = "#8FBCBB"
+green   = "#A3BE8C"
 magenta = "#B48EAD"
-red = "#BF616A"
-white = "#ECEFF4"
-yellow = "#EBCB8B"
+red     = "#BF616A"
+white   = "#ECEFF4"
+yellow  = "#EBCB8B"
 
 [colors.normal]
-black = "#3B4252"
-blue = "#81A1C1"
-cyan = "#88C0D0"
-green = "#A3BE8C"
+black   = "#3B4252"
+blue    = "#81A1C1"
+cyan    = "#88C0D0"
+green   = "#A3BE8C"
 magenta = "#B48EAD"
-red = "#BF616A"
-white = "#E5E9F0"
-yellow = "#EBCB8B"
+red     = "#BF616A"
+white   = "#E5E9F0"
+yellow  = "#EBCB8B"
 
 [colors.primary]
 background = "#2E3440"
@@ -27,27 +27,27 @@ thickness = 0.3
 
 [cursor.style]
 blinking = "off"
-shape = "underline"
+shape    = "underline"
 
 [env]
-LANG = "en_US.UTF-8"
+LANG     = "en_US.UTF-8"
 LC_CTYPE = "en_US.UTF-8"
-TERM = "alacritty"
+TERM     = "alacritty"
 
 [font]
 size = 11.0
 
 [font.bold]
 family = "Source Code Pro"
-style = "Bold"
+style  = "Bold"
 
 [font.italic]
 family = "Source Code Pro"
-style = "Italic"
+style  = "Italic"
 
 [font.normal]
 family = "Source Code Pro"
-style = "Regular"
+style  = "Regular"
 
 [window.padding]
 x = 4
